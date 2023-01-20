@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Add Product Form</h1>
+
+<form [formGroup]="traveller" class="overlays">
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Id">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Hotel</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Hotel">
+            <mat-select>
+                <mat-option value="Aria">Aria </mat-option>
+                <mat-option value="Marriott">Marriott </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+        <mat-form-field color="accent" appearance="outline">
+            <mat-label>Arrival</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="Arrival">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field><br>
+        <mat-form-field color="accent" appearance="outline">
+            <mat-label>Departure</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="Departure">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Type">
+            <mat-select>
+                <mat-option value="Luxury Suite">Luxury Suite </mat-option>
+                <mat-option value="Economy">Economy </mat-option>
+                <mat-option value="Suite">Suite </mat-option>
+                <mat-option value="Double">Double </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Guests</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Guests">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Price">
+        </mat-form-field>
+        <section>
+            <div>
+                <button mat-raised-button color="sucess" (click)=" save() ">Save</button>&nbsp;
+                <button mat-raised-button color="warn">Cancel</button>
+            </div>
+        </section>
+
+    </div>
+</form>

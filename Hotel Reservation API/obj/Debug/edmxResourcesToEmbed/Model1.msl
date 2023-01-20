@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegisterModelStoreContainer" CdmEntityContainer="RegisterEntities">
+    <EntitySetMapping Name="Sams">
+      <EntityTypeMapping TypeName="RegisterModel.Sam">
+        <MappingFragment StoreEntitySet="Sam">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="college" ColumnName="college" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

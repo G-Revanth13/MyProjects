@@ -1,0 +1,128 @@
+<mat-card class="one">
+    <mat-card-content>Travel Planet</mat-card-content>
+    <mat-card-content style="float:right" (click)="out()">LogOut</mat-card-content>
+</mat-card>
+<section>
+    <div>
+        <button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+    </div>
+</section>
+<div>
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Hotel">
+            <th mat-header-cell *matHeaderCellDef> Hotel</th>
+            <td mat-cell *matCellDef="let element"> {{element.Hotel}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Arrival">
+            <th mat-header-cell *matHeaderCellDef> Arrival</th>
+            <td mat-cell *matCellDef="let element"> {{element.Arrival}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Departure">
+            <th mat-header-cell *matHeaderCellDef> Departure </th>
+            <td mat-cell *matCellDef="let element"> {{element.Departure}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Type">
+            <th mat-header-cell *matHeaderCellDef> Type</th>
+            <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Guests">
+            <th mat-header-cell *matHeaderCellDef> Guests</th>
+            <td mat-cell *matCellDef="let element"> {{element.Guests}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef> Price</th>
+            <td mat-cell *matCellDef="let element"> {{element.Price | currency}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Manage">
+            <th mat-header-cell *matHeaderCellDef>Manage</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary">Edit</button>
+                <button mat-raised-button color="warn" (click)="remove(element.Id)">Delete</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef=" displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table> -->
+
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+
+
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                <td mat-cell *matCellDef="let row"> {{row.Id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Hotel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Hotel </th>
+                <td mat-cell *matCellDef="let row"> {{row.Hotel }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Arrival">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival </th>
+                <td mat-cell *matCellDef="let row"> {{row.Arrival | date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Departure">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure </th>
+                <td mat-cell *matCellDef="let row"> {{row.Departure | date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Guests">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Guests </th>
+                <td mat-cell *matCellDef="let row"> {{row.Guests}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                <td mat-cell *matCellDef="let row"> {{row.Type}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td mat-cell *matCellDef="let row"> {{row.Price | currency}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Manage">
+                <th mat-header-cell *matHeaderCellDef>Manage</th>
+                <td mat-cell *matCellDef="let row">
+                    <button mat-raised-button color="primary" (click)="onEdit(row)">Edit</button>
+                    <button mat-raised-button color="warn" (click)="remove(row)">Delete</button>
+                </td>
+
+            </ng-container>
+
+            <ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+
+            </ng-container>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+</div>

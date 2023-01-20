@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RegisterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Sam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="college" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="RegisterModelStoreContainer">
+    <EntitySet Name="Sam" EntityType="Self.Sam" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
